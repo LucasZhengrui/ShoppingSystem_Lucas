@@ -22,8 +22,8 @@ class basicinfo(models.Model):
         return f'{self.Unique_id}, {self.Product_name}, {self.Brand_name}, {self.Category}, {self.Selling_price}, {self.Image}, {self.Amazon_seller}'
 
     def info():
-        cities = basicinfo.objects.all()
-        return cities
+        products = basicinfo.objects.all()
+        return products
 
     def get_absolute_url(self):
         return reverse('order_list', {'pk': self.pk})
