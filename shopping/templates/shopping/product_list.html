@@ -9,11 +9,6 @@
             Product List
         </h1>
         {% for product in page_obj %}
-        <!-- <b> 
-            <a href={% url 'cityname' city=city.city %}>
-                {{product.city }}
-            </a>
-        </b> -->
         <p>
             {{product.Unique_id}} | {{ product.Product_name }} | {{ product.Brand_name }} | {{product.Category}} | {{ product.Selling_price }} | {{ product.Image }} | {{ product.Amazon_seller }}
         </p>
