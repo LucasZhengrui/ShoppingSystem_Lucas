@@ -55,16 +55,3 @@ class Command(BaseCommand):
                 )
                 basicinfo_object.save()
         print("Data parsed successfully")
-
-        # Initialization
-        # connection = sqlite3.connect('db.sqlite3')
-        # cursor = connection.cursor()
-        # cursor.execute("DROP TABLE IF EXISTS disaster_message;")
-        # cursor.execute("CREATE TABLE disaster_message (id INTEGER NOT NULL, message TEXT NOT NULL, PRIMARY KEY (id));")
-        # cursor.execute("INSERT INTO disaster_message VALUES (1, 'Welcome to the management system, if you have any questions please contact l.wang.22@abdn.ac.uk, r.zheng.22@abdn.ac.uk，t05bl22@abdn.ac.uk，t16cl22@abdn.ac.uk');")
-        # cursor.execute("DROP TABLE IF EXISTS disaster_user;")
-        # cursor.execute("CREATE TABLE disaster_user (user_id INTEGER, user_password TEXT, user_name TEXT, user_level INTEGER, login_status TEXT, is_banned INTEGER, is_delete INTEGER, is_approved INTEGER, PRIMARY KEY (user_id));")
-        # cursor.execute("INSERT INTO disaster_user VALUES (1, '21232f297a57a5a743894a0e4a801fc3', 'admin', 3, '1', 0, 0, 1);")
-        # connection.commit()
-
-        # print("Initialization data successfully")

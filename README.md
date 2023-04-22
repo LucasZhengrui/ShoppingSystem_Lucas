@@ -8,3 +8,5 @@ Here is the solo assessment for Enterprise Software Programming.
 > * **19/4/2023** Added Open Source Data.
 > 
 > * **21/4/2023** Now, we could show the basic data structure on a web page.
+> 
+> * **22/4/2023** Now, we could show the image of the product.

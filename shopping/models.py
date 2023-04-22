@@ -37,6 +37,10 @@ class detail(models.Model):
     Shipping_weight = models.TextField()
     Product_dimensions = models.TextField()
 
+    def shopping_by_id(product_id):
+        product_list = basicinfo.objects.filter(Unique_id = product_id)
+        return product_list
+
     def __str__(self):
         return f'{self.Unique_id}, {self.Model_number}, {self.About_product}, {self.Product_specification}, {self.Technical_details}, {self.Shipping_weight}, {self.Product_dimensions}'
 

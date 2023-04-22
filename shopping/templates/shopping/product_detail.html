@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>
+            Lucas's Amazon
+        </title>
+    </head>
+    <body>
+        <h1>
+            Product Details
+        </h1>
+        {% for product in page_obj %}
+        <p>
+            {{ product.Unique_id }} | {{ product.Model_number }} | {{ product.About_product }} | {{ product.Product_specification }} | {{ product.Technical_details }} | {{ product.Shipping_weight }} | {{ product.Product_dimensions }}
+        </p>
+        {% endfor %}
+    </body>
+</html>
