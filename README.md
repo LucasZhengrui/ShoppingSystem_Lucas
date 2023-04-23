@@ -1,5 +1,7 @@
 # Shopping System created by Lucas(Rui Zheng)
-Here is the solo assessment for Enterprise Software Programming.
+Here is the solo assessment for Enterprise Software Programming. Well, here is the most important information about the open data that I found for this project.
+
+[Open data source](https://data.world/promptcloud/amazon-product-dataset-2020/workspace/file?filename=marketing_sample_for_amazon_com-ecommerce__20200101_20200131__10k_data.csv%2Fhome%2Fsdf%2Fmarketing_sample_for_amazon_com-ecommerce__20200101_20200131__10k_data.csv)
 
 ## Development Log:
 
