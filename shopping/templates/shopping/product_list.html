@@ -10,14 +10,14 @@
         </h1>
         {% for product in page_obj %}
         <p>
-            <a href="{% url 'product_details' Unique_id=product.Unique_id %}">
+            <a href="{% url 'product_details' id=product.id %}">
                 {{product.Unique_id}}
             </a>
             <div>
                 <div>
                     <img src="{{ product.Image }}" alt="My Image or without image" width="300" height="200">
                 </div>
-                {{ product.Product_name }} | {{ product.Brand_name }} | {{product.Category}} | {{ product.Selling_price }} | {{ product.Amazon_seller }}
+                {{ product.Product_name }} | {{ product.Brand_name }} | {{ product.Category}} | {{ product.Selling_price }} | {{ product.Amazon_seller }}
             </div>
         </p>
         {% endfor %}
