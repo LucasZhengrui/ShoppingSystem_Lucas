@@ -1,17 +1,99 @@
 <html>
     <head>
+        <link rel="stylesheet" href="design.css">
         <title>
             Lucas's Amazon
         </title>
     </head>
     <body>
-        <h1>
-            Product Details
-        </h1>
-        {% for product in list %}
-        <p>
-            {{ product.Unique_id }} | {{ product.2 }} | {{ product.3 }} | {{ product.4 }} | {{ product.5 }} | {{ product.6 }} | {{ product.7 }}
-        </p>
-        {% endfor %}
+        <div class="basicsetting">
+            <h1>
+                Product Details
+            </h1>
+            {% for product in list %}
+            <div>
+                <h2>
+                    {{ product.2 }}
+                </h2>
+            </div>
+            
+            <div>
+                <img src="{{ product.6 }}" alt="My Image or without image" width="300" height="200">
+            </div>
+            
+            <p>
+                <div>
+                    <h4>
+                        Brand name: 
+                    </h4>
+                    {{ product.3 }}
+                </div>
+                
+                <div>
+                    <h4>
+                        Category: 
+                    </h4>
+                    {{ product.4 }}
+                </div>
+                
+                <div>
+                    <h4>
+                        Selling Price: 
+                    </h4>
+                    {{ product.5 }}
+                </div>
+                
+                <div>
+                    <h4>
+                        Is it sold by Amazon: 
+                    </h4>
+                    {{ product.7 }}
+                </div>
+                
+                <div>
+                    <h4>
+                        Module No.: 
+                    </h4>
+                    {{ product.9 }}
+                </div>
+                
+                <div>
+                    <h4>
+                        About product: 
+                    </h4>
+                    {{ product.10 }}
+                </div>
+                
+                <div>
+                    <h4>
+                        Product specification: 
+                    </h4>
+                    {{ product.11 }}
+                </div>
+                
+                <div>
+                    <h4>
+                        Technical details: 
+                    </h4>
+                    {{ product.12 }}
+                </div>
+                
+                <div>
+                    <h4>
+                        Shipping weight: 
+                    </h4>
+                    {{ product.13 }}
+                </div>
+                
+                <div>
+                    <h4>
+                        Product dimensions: 
+                    </h4>
+                    {{ product.14 }}
+                </div>
+            </p>
+            {% endfor %}
+            <a href="/">Return to List</a>
+        </div>
     </body>
 </html>
