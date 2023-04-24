@@ -3,11 +3,6 @@ from django.db import models
 from django.utils import timezone
 from django.urls import reverse
 
-# Data details:
-# Uniq Id,Product Name,Brand Name,Category,Selling Price,Model Number,
-# About Product,Product Specification,Technical Details,Shipping Weight,Product Dimensions,Image,
-# Variants,Sku,Product Url,Stock,Product Details,Dimensions,Color,Ingredients,Direction To Use,Is Amazon Seller
-
 # Create your models here.
 class basicinfo(models.Model):
     Unique_id = models.TextField()
