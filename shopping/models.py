@@ -25,6 +25,7 @@ class basicinfo(models.Model):
     
 class detail(models.Model):
     Unique_id = models.ForeignKey('shopping.basicinfo', on_delete=models.CASCADE, related_name='details')
+    Is_deleted = models.IntegerField(default=0)
     Model_number = models.TextField()
     About_product = models.TextField()
     Product_specification = models.TextField()
@@ -37,7 +38,7 @@ class detail(models.Model):
         return product_list
 
     def __str__(self):
-        return f'{self.Unique_id}, {self.Model_number}, {self.About_product}, {self.Product_specification}, {self.Technical_details}, {self.Shipping_weight}, {self.Product_dimensions}'
+        return f'{self.Unique_id}, {self.Is_deleted}, {self.Model_number}, {self.About_product}, {self.Product_specification}, {self.Technical_details}, {self.Shipping_weight}, {self.Product_dimensions}'
 
     def get_absolute_url(self):
         return reverse('order_list', {'pk': self.pk})
