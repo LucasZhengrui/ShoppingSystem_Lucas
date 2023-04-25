@@ -6,77 +6,92 @@
             Lucas's Amazon
         </title>
         <style>
+            .basic_setting{
+                text-align: center;
+            }
             .product-container {
-              display: flex;
-              flex-wrap: wrap;
+                flex-wrap: wrap;
+                display: flex;
+                width:100%;
+                text-align: center;
             }
             .product {
-                box-sizing: border-box;
-                width: calc(25% - 20px);
-                margin: 10px;
-                border: 1px solid black;
-                padding: 10px;
+                background-color: #ffffff;
+                border-radius: 5px;
+                box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                border:1px solid black;
+                margin:5px;
+            }
+            a{
+                text-decoration: none;
+                color:black;
             }
         </style>
     </head>
     <body>
-        <div class="basicsetting">
-            <h1>
-                Product List
-            </h1>
-            <a href="/cart">
-                Cart
-            </a>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/design.css' %}">
+        <div>
+            <div class="basic_setting">
+                <h1>
+                    Product List
+                </h1>
+                <a href="/cart">
+                    Cart
+                </a>
+            </div>
             <div class="product-container">
                 {% for product in page_obj %}
                 <div class="product">
                     <a href="{% url 'product_details' id=product.id %}">
                         {{product.Unique_id}}
+                        <div style = "width:320px">
+                            <div>
+                                <img src="{{ product.Image }}" alt="My Image or without image" width="300" height="200">
+                            </div>
+                            <div>
+                                {{ product.Product_name }}
+                            </div>
+                            <div>
+                                <h4>
+                                    Brand: 
+                                </h4>
+                                    {{ product.Brand_name }}
+                            </div>
+                            <div>
+                                <h4>
+                                    Category
+                                </h4>
+                                {{ product.Category}} 
+                            </div>
+                            <div>
+                                <h4>
+                                    Price:
+                                </h4>
+                                {{ product.Selling_price }}
+                            </div>
+                            <div>
+                                {{ product.Amazon_seller }}
+                            </div>
+                        </div>
                     </a>
-                    <div>
-                        <div>
-                            <img src="{{ product.Image }}" alt="My Image or without image" width="300" height="200">
-                        </div>
-                        <div>
-                            {{ product.Product_name }}
-                        </div>
-                        <div>
-                            <h4>
-                                Brand: 
-                            </h4>
-                                {{ product.Brand_name }}
-                        </div>
-                        <div>
-                            <h4>
-                                Category
-                            </h4>
-                            {{ product.Category}} 
-                        </div>
-                        <div>
-                            <h4>
-                                Price:
-                            </h4>
-                            {{ product.Selling_price }}
-                        </div>
-                        <div>
-                            {{ product.Amazon_seller }}
-                        </div>
-                    </div>
                 </div>
                 {% endfor %}
             </div>
             
-            {% if page_obj.has_previous %}
-                <a href="?page=1">&laquo; first</a>
-                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
-            {% endif %}
+            <div class="basic_setting">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
 
-                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
 
-            {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}">next</a>
-                <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
-            {% endif %}
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">next</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </div>
         </div>
     </body>
 </html>
