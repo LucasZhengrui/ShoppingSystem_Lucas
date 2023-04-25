@@ -34,7 +34,7 @@
                     <h4>
                         Category: 
                     </h4>
-                    {{ product.6 }}
+                    {{ product.7 }}
                 </div>
                 
                 <div>
@@ -93,8 +93,18 @@
                     {{ product.13 }}
                 </div>
             </p>
+            <div>
+                <a href="{% url 'addcart' id=product.8 %}">
+                    Add to cart
+                </a>
+            </div>
             {% endfor %}
-            <a href="/">Return to List</a>
+            
+            <div>
+                <a href="/">
+                    Return to List
+                </a>
+            </div>
         </div>
     </body>
 </html>

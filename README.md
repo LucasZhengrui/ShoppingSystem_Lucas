@@ -16,3 +16,5 @@ Here is the solo assessment for Enterprise Software Programming. Well, here is t
 > * **23/4/2023** Fortunately, we now could link two tables and show in the detail html page.
 > 
 > * **24/4/2023** Now, we may use css file to design our pages.
+> 
+> * **25/4/2023** Now, we added cart feature with add and cancel, but we have bug at the moment.
