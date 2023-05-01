@@ -48,7 +48,7 @@ def index(request):
                                                          'search_field': search_field, 'page_range': page_range, 'message_obj':message_obj})
 
 def order(request, id):
-    order = detail.objects.get(Unique_id=id)
+    order = detail.objects.get(id=id) # The 'id' in this place should be the unique one which was created by shopping/model (build database or read csv)
     order.Is_deleted = 1
     order.save()
     return product_list(request)
@@ -69,7 +69,7 @@ def order_list(request):
     return render(request, 'order/order_list.html', {'list': myList, 'message_obj': message_obj})
 
 def cancel(request, id):
-    product = detail.objects.get(Unique_id=id)
+    product = detail.objects.get(id=id) # The 'id' in this place should be the unique one which was created by shopping/model (build database or read csv)
     product.Is_deleted = 0
     product.save()
     return HttpResponseRedirect('/cart')

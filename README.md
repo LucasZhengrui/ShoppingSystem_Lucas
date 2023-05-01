@@ -18,3 +18,5 @@ Here is the solo assessment for Enterprise Software Programming. Well, here is t
 > * **24/4/2023** Now, we may use css file to design our pages.
 > 
 > * **25/4/2023** Now, we added cart feature with add and cancel, but we have bug at the moment.
+> 
+> * **30/4/2023** Now, cart feature with add and cancel could be used normally without bug.
