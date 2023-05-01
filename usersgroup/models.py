@@ -1,4 +1,5 @@
 from django.db import models
+from shopping.models import Message
 
 # Create your models here.
 class clients(models.Model):
