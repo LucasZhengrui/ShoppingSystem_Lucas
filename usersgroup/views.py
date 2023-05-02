@@ -22,8 +22,8 @@ def register(request):
     Error_message = ""
     if request.method == 'POST':
         # get data from request.POST
-        User_psd = request.POST.get('password')
-        User_confirm_psd = request.POST.get('confirm_password')
+        User_psd = request.POST.get('Password')
+        User_confirm_psd = request.POST.get('Confirm_Password')
         
         if User_psd != User_confirm_psd:
               Error_message = "Oooops, something wrong! Please insert same password twice!"
@@ -36,12 +36,12 @@ def register(request):
         # create a new user in the database
         conn = sqlite3.connect('db.sqlite3')
         cursor = conn.cursor()
-        query = "INSERT INTO Clients (User_psd, User_nickname, User_status) VALUES (?, ?, ?)"
+        query = "INSERT INTO Clients_table (User_psd, User_nickname, User_status) VALUES (?, ?, ?)"
         cursor.execute(query, (Password_md5, User_nickname, User_status))
         conn.commit()
         conn.close()
 
-        response = goto_index_view(request,'/register/user/')
+        response = goto_index_view(request,'/')
         return response
     else:
-        return render(request, 'usersgroup/useradd.html') # Need to be fixed since there is no html file at the moment
+        return render(request, 'usersgroup/register.html') # Need to be fixed since there is no html file at the moment

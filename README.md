@@ -22,3 +22,5 @@ Here is the solo assessment for Enterprise Software Programming. Well, here is t
 > * **30/4/2023** Now, cart feature with add and cancel could be used normally without bug.
 > 
 > * **1/5/2023** Now, we started to handle the user part, include login, sign up, and log out.
+> 
+> * **2/5/2023** Now, we have added a register feature, which have users' database and now, we could sign up.
