@@ -47,9 +47,18 @@
                     </a>
                 </div>
                 <div>
-                    <a href="/login">
-                        Login
+                    {% if request.COOKIES.Nickname %}
+                    <a href="#">
+                        Hi {{ request.COOKIES.Nickname }}, welcome!
                     </a>
+                    <br> &nbsp; &nbsp;
+                    <a href="/login">
+                        Logout
+                    </a>
+                    <br> &nbsp; &nbsp;
+                    {% else %}
+                    <a href="/login">Login</a><br> &nbsp; &nbsp;
+                    {% endif %}
                 </div>
             </div>
             <div class="product-container">

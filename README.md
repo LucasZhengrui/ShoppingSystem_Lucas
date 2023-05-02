@@ -26,3 +26,5 @@ Here is the solo assessment for Enterprise Software Programming. Well, here is t
 > * **2/5/2023** Now, we have added a register feature, which have users' database and now, we could sign up.
 > 
 > * **2/5/2023** Now, we have added a login feature, and we could login if we have account that we signed up.
+> 
+> * **3/5/2023** Now, we have added a logout button and a welcome message, and we could logout if we have logged in.
