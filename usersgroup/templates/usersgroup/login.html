@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Login
+    </title>
+</head>
+<body>
+    <div>
+        <div>
+            <div>
+                <form method="post" action="">
+                    {% csrf_token %}
+                    <h2>
+                        Login
+                    </h2>
+                    <div>
+                        <label for="Nickname">
+                            Your Nickname:
+                        </label>
+                        <input type="text" id="Nickname" name="Nickname" required>
+                    </div>
+                    <div>
+                        <label for="Password">
+                            Your Password:
+                        </label>
+                        <input type="password" id="Password" name="Password" required>
+                    </div>
+                    <input type="submit" value="Login">
+                    <div>
+                        {% if error_message != "" %}
+                        <span>
+                            {{error_message}}
+                        </span> 
+                        {% endif %}
+                    </div>
+                </form>
+                <div>
+                    <a href="/">
+                        Return to List
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

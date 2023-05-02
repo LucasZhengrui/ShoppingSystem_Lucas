@@ -45,3 +45,45 @@ def register(request):
         return response
     else:
         return render(request, 'usersgroup/register.html') # Need to be fixed since there is no html file at the moment
+    
+def login(request):
+    if request.method == 'POST':
+        # Get the user nickname and password
+        Nickname = request.POST.get('Nickname')
+        Password = request.POST.get('Password')
+
+        # Search user in the database
+        try:
+            user = clients.objects.get(User_nickname=Nickname)
+        except clients.DoesNotExist:
+            error_message = 'Bad luck, user is not found!'
+            return render(request, 'usersgroup/login.html', {'error_message': error_message})
+
+        # Check password, is it correct?
+        Password_md5 = hashlib.md5(Password.encode('utf-8')).hexdigest()
+        if Password_md5 != user.User_psd:
+            error_message = 'Password is incorrect!'
+            return render(request, 'usersgroup/login.html', {'error_message': error_message})
+
+        # Set user login status to "logged in"
+        user.User_status = 1 # 0 means the user doesn't login, 1 means the user has logged in to their account
+        user.save()
+
+        # Create a response object and set a cookie
+        response = goto_index_view(request,'/')
+        response.set_cookie('Nickname', Nickname)
+
+        return response
+
+    else:
+        response = render(request, 'usersgroup/login.html')
+        Nickname = request.COOKIES.get('Nickname')
+        try:
+            user = clients.objects.get(User_nickname=Nickname)
+            user.User_status = 0
+            user.save()
+        except clients.DoesNotExist:
+            pass
+        
+        response.delete_cookie('Nickname')
+        return response
