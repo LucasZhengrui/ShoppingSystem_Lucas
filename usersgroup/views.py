@@ -29,22 +29,21 @@ def register(request):
               Error_message = "Oooops, something wrong! Please insert same password twice!"
               return render(request, 'usersgroup/register.html',{'Error_message':Error_message})
         
-        Password_md5 = hashlib.md5(User_psd.encode('utf-8')).hexdigest()
-        User_nickname = request.POST.get('Nickname')
-        User_status = 0
+        Password_md5_signup = hashlib.md5(User_psd.encode('utf-8')).hexdigest()
+        User_name = request.POST.get('name')
+        Status = 0
 
         # create a new user in the database
         conn = sqlite3.connect('db.sqlite3')
         cursor = conn.cursor()
-        query = "INSERT INTO Clients_table (User_psd, User_nickname, User_status) VALUES (?, ?, ?)"
-        cursor.execute(query, (Password_md5, User_nickname, User_status))
+        cursor.execute("INSERT INTO Clients_table (User_psd, User_nickname, User_status) VALUES (?, ?, ?)", (Password_md5_signup, User_name, Status))
         conn.commit()
         conn.close()
 
         response = goto_index_view(request,'/')
         return response
     else:
-        return render(request, 'usersgroup/register.html') # Need to be fixed since there is no html file at the moment
+        return render(request, 'usersgroup/register.html')
     
 def login(request):
     if request.method == 'POST':

@@ -6,7 +6,7 @@ from django.urls import reverse
 class clients(models.Model): # Here is the creating period for user info's database
     User_id = models.IntegerField(primary_key=True)
     User_psd = models.TextField()
-    User_nickname = models.TextField()
+    User_nickname = models.TextField(null=True, default='Guest')
     User_status = models.TextField()
 
     class Meta:
