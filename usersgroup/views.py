@@ -8,8 +8,14 @@ from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from shopping.models import Message
 from shopping.views import get_message_obj
+from django.contrib.auth.decorators import user_passes_test
 
 # Create your views here.
+
+@user_passes_test(lambda user: user.has_perm('app_label.permission_codename'))
+def view_customer_data(request):
+    # your code here
+    pass
 
 # def index(request):
 #     return render(request, 'usersgroup/index.html')
@@ -31,12 +37,14 @@ def register(request):
         
         Password_md5_signup = hashlib.md5(User_psd.encode('utf-8')).hexdigest()
         User_name = request.POST.get('name')
+        User_email = request.POST.get('email')
         Status = 0
+        Is_Superuser = False
 
         # create a new user in the database
         conn = sqlite3.connect('db.sqlite3')
         cursor = conn.cursor()
-        cursor.execute("INSERT INTO Clients_table (User_psd, User_nickname, User_status) VALUES (?, ?, ?)", (Password_md5_signup, User_name, Status))
+        cursor.execute("INSERT INTO Clients_table (User_nickname, User_status, password, User_email, is_superuser) VALUES (?, ?, ?, ?, ?)", (User_name, Status, Password_md5_signup, User_email, Is_Superuser))
         conn.commit()
         conn.close()
 
@@ -50,6 +58,7 @@ def login(request):
         # Get the user nickname and password
         Nickname = request.POST.get('Nickname')
         Password = request.POST.get('Password')
+        Email = request.POST.get('Email')
 
         # Search user in the database
         try:
@@ -60,10 +69,15 @@ def login(request):
 
         # Check password, is it correct?
         Password_md5 = hashlib.md5(Password.encode('utf-8')).hexdigest()
-        if Password_md5 != user.User_psd:
+        if Password_md5 != user.password:
             error_message = 'Password is incorrect!'
             return render(request, 'usersgroup/login.html', {'error_message': error_message})
-
+        
+        # Check email address
+        if Email != user.User_email:
+            error_message = 'Email is incorrect!'
+            return render(request, 'usersgroup/login.html', {'error_message': error_message})
+        
         # Set user login status to "logged in"
         user.User_status = 1 # 0 means the user doesn't login, 1 means the user has logged in to their account
         user.save()
