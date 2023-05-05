@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-nsbd_5@##+ipp*1f76yhk(9rl=@6eu1_mz&dib&tn^g&e4%&qm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'lucass-toys-ecommerce.onrender.com', 'ricardobarbara-nissanventura.codio-box.uk']
+ALLOWED_HOSTS = ['127.0.0.1', 'lucass-toys-ecommerce.onrender.com', 'ricardobarbara-nissanventura-8000.codio-box.uk']
 
 
 # Application definition
