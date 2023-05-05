@@ -141,3 +141,5 @@ As for the Django installation
 > * **5/5/2023** Search feature has been added, but it needs to be updated later.
 > 
 > * **5/5/2023** Search feature has been updated, and now, it can be used normally, but the page have some problems.
+> 
+> * **5/5/2023** Now, we have deployed the project in render, we could browse it at https://lucass-toys-ecommerce.onrender.com/.
