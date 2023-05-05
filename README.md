@@ -139,3 +139,5 @@ As for the Django installation
 > * **4/5/2023** We rebuild the user model, in order to connect with Django's user management. Here is a basic version at the moment.
 > 
 > * **5/5/2023** Search feature has been added, but it needs to be updated later.
+> 
+> * **5/5/2023** Search feature has been updated, and now, it can be used normally, but the page have some problems.

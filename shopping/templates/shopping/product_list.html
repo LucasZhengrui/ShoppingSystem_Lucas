@@ -61,7 +61,7 @@
                     {% endif %}
                 </div>
             </div>
-            <div>
+            <div class="basic_setting">
                 <form method="get" action="{% url 'search' %}">
                     <div>
                         <div>
@@ -69,15 +69,13 @@
                                 <option value="all">Please select</option>
                                 <option value="Category">Category</option>
                                 <option value="Product_name">Product name</option>
-                                <option value="id">ID</option>
+                                <option value="Unique_id">ID</option>
                             </select>
                         </div>
                         <input type="text" name="search_query" placeholder="Search...">
                         <div>
                             <button type="submit">Enter</button>
                         </div>
-                        <div>
-                            <a href="/">Return to List</a>
                     </div>
                 </form>
             </div>
