@@ -61,6 +61,26 @@
                     {% endif %}
                 </div>
             </div>
+            <div>
+                <form method="get" action="{% url 'search' %}">
+                    <div>
+                        <div>
+                            <select name="search_field">
+                                <option value="all">Please select</option>
+                                <option value="Category">Category</option>
+                                <option value="Product_name">Product name</option>
+                                <option value="id">ID</option>
+                            </select>
+                        </div>
+                        <input type="text" name="search_query" placeholder="Search...">
+                        <div>
+                            <button type="submit">Enter</button>
+                        </div>
+                        <div>
+                            <a href="/">Return to List</a>
+                    </div>
+                </form>
+            </div>
             <div class="product-container">
                 {% for product in page_obj %}
                 <div class="product">
