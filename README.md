@@ -7,14 +7,16 @@
 #### 2. Main features
 
 * View products list with page controller, which is a feature for all kinds of users
-* View products details for each products
-* Add product to cart in the detail page
+* View products details for each product
+* Add product to cart on the detail page
 * View cart
-* Cancel order in the cart page
+* Cancel order on the cart page
 * Registration
 * Login and Logout
 
 #### 3. Database Overview
+
+The structure model could be viewed in [model.py](https://github.com/LucasZhengrui/ShoppingSystem_Lucas/blob/main/models.py)
 
 #### 4. Installation
 
@@ -29,7 +31,7 @@
     source .venv/bin/activate 
 ```
 
-###### 4.1.2 Clone the repository or pull the code from Github
+###### 4.1.2 Clone the repository or pull the code from GitHub
 ``` shell
     git clone git@github.com:LucasZhengrui/ShoppingSystem_Lucas.git
 ```
@@ -44,7 +46,7 @@ Or if you have cloned before
 For example:
 
 ``` shell
-    ALLOWED_HOSTS = ['127.0.0.1']
+    ALLOWED_HOSTS = ['127.0.0.1', 'lucass-toys-ecommerce.onrender.com', 'ricardobarbara-nissanventura-8000.codio-box.uk']
 ```
 
 ###### 4.1.4 Install Django in terminal
@@ -74,7 +76,7 @@ P.S **8000** is decided by what did you input in 4.1.3
     source .venv/bin/activate 
 ```
 
-###### 4.2.2 Clone the repository or pull the code from Github
+###### 4.2.2 Clone the repository or pull the code from GitHub
 ``` shell
     git clone https://github.com/LucasZhengrui/ShoppingSystem_Lucas.git
 ```
@@ -89,7 +91,7 @@ Or if you have cloned before
 For example:
 
 ``` shell
-    ALLOWED_HOSTS = ['127.0.0.1']
+    ALLOWED_HOSTS = ['127.0.0.1', 'lucass-toys-ecommerce.onrender.com', 'ricardobarbara-nissanventura-8000.codio-box.uk']
 ```
 
 ###### 4.2.4 Install Django in terminal
@@ -108,11 +110,27 @@ As for the Django installation
 
 #### 5. Test
 
+We have done unit testing for other apps, which were in the specific test.py files.
+
 #### 6. Details of deploying the website application
+
+The website application has been deployed to Render, here is its URL: https://lucass-toys-ecommerce.onrender.com/ .
+
+Build command:
+
+``` shell
+    pip install --upgrade pip && pip install -r requirements.txt
+```
+
+Start command:
+
+``` shell
+    gunicorn shopping_system.wsgi:application --worker-class=gevent --worker-connections=1000 --workers=4 --bind=0.0.0.0:$PORT
+```
 
 #### 7. Development Log:
 
-> * **15/4/2023** Started to doing this Project.
+> * **15/4/2023** Started to do this Project.
 > 
 > * **19/4/2023** Added Open Source Data.
 > 
@@ -120,19 +138,19 @@ As for the Django installation
 > 
 > * **22/4/2023** Now, we could show the image of the product.
 > 
-> * **23/4/2023** Fortunately, we now could link two tables and show in the detail html page.
+> * **23/4/2023** Fortunately, we now could link two tables and show them on the detail html page.
 > 
 > * **24/4/2023** Now, we may use css file to design our pages.
 > 
-> * **25/4/2023** Now, we added cart feature with add and cancel, but we have bug at the moment.
+> * **25/4/2023** Now, we added a cart feature with add and cancel, but we have bug at the moment.
 > 
-> * **30/4/2023** Now, cart feature with add and cancel could be used normally without bug.
+> * **30/4/2023** Now, cart feature with add and cancel could be used normally without bugs.
 > 
-> * **1/5/2023** Now, we started to handle the user part, include login, sign up, and log out.
+> * **1/5/2023** Now, we started to handle the user part, including login, sign up, and log out.
 > 
-> * **2/5/2023** Now, we have added a register feature, which have users' database and now, we could sign up.
+> * **2/5/2023** Now, we have added a register feature, which has users' database, and now, we could sign up.
 > 
-> * **2/5/2023** Now, we have added a login feature, and we could login if we have account that we signed up.
+> * **2/5/2023** Now, we have added a login feature, and we could login if we have an account that we signed up.
 > 
 > * **3/5/2023** Now, we have added a logout button and a welcome message, and we could logout if we have logged in.
 > 
@@ -140,7 +158,7 @@ As for the Django installation
 > 
 > * **5/5/2023** Search feature has been added, but it needs to be updated later.
 > 
-> * **5/5/2023** Search feature has been updated, and now, it can be used normally, but the page have some problems.
+> * **5/5/2023** Search feature has been updated, and now, it can be used normally, but the page has some problems.
 > 
 > * **5/5/2023** Now, we have deployed the project in render, we could browse it at https://lucass-toys-ecommerce.onrender.com/.
 > 
