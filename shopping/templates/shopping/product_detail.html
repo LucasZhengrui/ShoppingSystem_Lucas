@@ -94,11 +94,23 @@
                 </div>
             </p>
             <div>
-                <a href="{% url 'addcart' id=product.8 %}">
-                    Add to cart
-                </a>
+                {% if request.COOKIES.Nickname %}
+                <div>
+                    <a href="{% url 'addcart' id=product.8 %}">
+                        Add to cart
+                    </a>
+                </div>
+                {% else %}
+                <div>
+                     <a href="/login">
+                        Add to cart
+                    </a>
+                    <br> &nbsp; &nbsp;
+                </div>       
+                {% endif %}
             </div>
             {% endfor %}
+            
             
             <div>
                 <a href="/">

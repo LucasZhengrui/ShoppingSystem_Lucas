@@ -37,16 +37,6 @@
                     Product List
                 </h1>
                 <div>
-                    <a href="/cart">
-                        Cart
-                    </a>
-                </div>
-                <div>
-                    <a href="/register">
-                        Register
-                    </a>
-                </div>
-                <div>
                     {% if request.COOKIES.Nickname %}
                     <a href="#">
                         Hi {{ request.COOKIES.Nickname }}, welcome!
@@ -56,8 +46,19 @@
                         Logout
                     </a>
                     <br> &nbsp; &nbsp;
+                    <a href="/cart">
+                        Cart
+                    </a>
+                    <br> &nbsp; &nbsp;
                     {% else %}
-                    <a href="/login">Login</a><br> &nbsp; &nbsp;
+                    <a href="/login">
+                        Login
+                    </a>
+                    <br> &nbsp; &nbsp;
+                    <a href="/register">
+                        Register
+                    </a>
+                    <br> &nbsp; &nbsp;
                     {% endif %}
                 </div>
             </div>
